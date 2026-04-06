@@ -1,52 +1,407 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Catch the Cheese</title>
-
-<link rel="icon" href="icon rato.jpg">
-<link rel="stylesheet" href="styles.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PaperRun — O Jogo de Papel</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
+ 
 
-<header class="banner">
-<h1>🐭 Catch the Cheese 🧀</h1>
-<p>Ajude o ratinho a pegar o queijo!</p>
+<nav id="main-nav">
+  <div class="nav-logo">✂ <span>PaperRun</span></div>
+ 
+  
+  <ul class="nav-links">
+    <li><a href="#" class="active" onclick="showPage('home',this);return false;">Início</a></li>
+    <li><a href="#" onclick="showPage('videos',this);return false;">Vídeos</a></li>
+    <li><a href="#" onclick="showPage('jogar',this);return false;">Jogar</a></li>
+    <li><a href="#" onclick="showPage('info',this);return false;">Sobre</a></li>
+    <li><a href="#" onclick="showPage('game',this);return false;">▶ O Jogo</a></li>
+  </ul>
+ 
+ 
+  <div class="nav-cta">
+    <a href="#" onclick="showPage('game', getNavLink(4));return false;" class="btn-play-nav">✏ JOGAR AGORA</a>
+  </div>
+ 
+  
+  <button class="nav-burger" id="burger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+ 
 
-<a class="botao" href="#">Jogar agora</a>
-</header>
+<nav class="nav-mobile" id="nav-mobile">
+  <a href="#" class="active" onclick="showPage('home',this);closeMobile();return false;">Início</a>
+  <a href="#" onclick="showPage('videos',this);closeMobile();return false;">Vídeos</a>
+  <a href="#" onclick="showPage('jogar',this);closeMobile();return false;">Jogar</a>
+  <a href="#" onclick="showPage('info',this);closeMobile();return false;">Sobre</a>
+  <a href="#" onclick="showPage('game',this);closeMobile();return false;">▶ O Jogo</a>
+  <a href="#" onclick="showPage('game',this);closeMobile();return false;" class="mobile-play">✏ JOGAR AGORA</a>
+</nav>
+ 
+ 
 
-<main>
+<div id="page-home" class="page active">
+ 
+  <section class="hero">
+    <span class="hero-sprite">🐭</span>
+    <h1 class="hero-title">PAPER<em>RUN</em></h1>
+    <p class="hero-sub">
+      Um mundo recortado à mão. Sprites de papel, físicas malucas
+      e <strong>muita bagunça</strong> pela frente.
+    </p>
+    <div class="hero-btns">
+      <a href="#" onclick="showPage('game', getNavLink(4));return false;" class="btn-primary">▶ Jogar Agora</a>
+      <a href="#" onclick="showPage('info', getNavLink(3));return false;" class="btn-outline">📄 Saiba Mais</a>
+    </div>
+  </section>
+ 
+  <div class="torn-edge dark"></div>
+ 
+  <div class="stats-bar">
+    <div class="stat-item"><span class="stat-num">2D</span><div class="stat-label">Plataforma</div></div>
+    <div class="stat-item"><span class="stat-num">∞</span><div class="stat-label">Mapas</div></div>
+    <div class="stat-item"><span class="stat-num">FREE</span><div class="stat-label">Gratuito</div></div>
+    <div class="stat-item"><span class="stat-num">✂</span><div class="stat-label">Estilo Papel</div></div>
+  </div>
+ 
+  <div class="section">
+    <h2 class="section-title"><span>Por que jogar?</span></h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <span class="feature-icon">✂️</span>
+        <div class="feature-title">Tudo de Papel</div>
+        <p class="feature-desc">Cada personagem, cenário e objeto foi desenhado com visual de papel recortado. Um mundo que parece saído de um caderno.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏃</span>
+        <div class="feature-title">Corra e Colete</div>
+        <p class="feature-desc">Navegue por fases cheias de obstáculos dobrando, escalando e escapando. A física estranha faz parte do charme!</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🗺️</span>
+        <div class="feature-title">Editor de Mapas</div>
+        <p class="feature-desc">Crie seus próprios cenários usando as ferramentas do jogo e compartilhe com outros jogadores.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">👤</span>
+        <div class="feature-title">Personalize</div>
+        <p class="feature-desc">Escolha entre dezenas de visuais de papel diferentes para o seu personagem. Cada um com estilo único.</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🏆</span>
+        <div class="feature-title">Ranking Global</div>
+        <p class="feature-desc">Compete com jogadores do mundo todo pelo topo do placar. Quem chegará primeiro?</p>
+      </div>
+      <div class="feature-card">
+        <span class="feature-icon">🔄</span>
+        <div class="feature-title">Sempre Novo</div>
+        <p class="feature-desc">Novos mapas e eventos toda semana. Nunca é a mesma corrida duas vezes.</p>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="doodle-divider">— ✂ — ✂ — ✂ —</div>
+ 
+  <div class="strip">
+    <p>PaperRun é um jogo <strong>indie, gratuito e em desenvolvimento</strong>. Sua opinião faz o jogo crescer — jogue e deixe seu feedback!</p>
+  </div>
+ 
+</div>
+ 
+ 
 
-<img src="ratinho.jpg" class="imagem-jogo">
+<div id="page-videos" class="page">
+  <div class="section">
+    <h2 class="section-title"><span>Vídeos</span></h2>
+    <p style="text-align:center; color:var(--ink-muted); font-family:'Special Elite',serif; margin-bottom:2rem; font-size:0.9rem;">
+      Gameplays, tutoriais e bastidores do desenvolvimento.
+    </p>
+    <div class="video-grid">
+ 
+      <div class="video-card">
+        <div class="video-wrapper">
+          
+          <iframe src="https://www.youtube.com/embed/G-_WMFkQnfM" allowfullscreen loading="lazy" title="Trailer"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Trailer — Primeiro Olhar</div>
+          <span class="video-tag">🎬 Trailer</span>
+        </div>
+      </div>
+ 
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/3Q3mG_XsVFE" allowfullscreen loading="lazy" title="Tutorial"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Como Jogar — Primeiros Passos</div>
+          <span class="video-tag">📚 Tutorial</span>
+        </div>
+      </div>
+ 
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/LpjFQoOKPo4" allowfullscreen loading="lazy" title="Gameplay"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Gameplay — Fase 1 Completa</div>
+          <span class="video-tag">🎮 Gameplay</span>
+        </div>
+      </div>
+ 
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/YQHsXMglC9A" allowfullscreen loading="lazy" title="Dicas"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-title">5 Dicas para Iniciantes</div>
+          <span class="video-tag">💡 Dicas</span>
+        </div>
+      </div>
+ 
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen loading="lazy" title="Devlog"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Bastidores — Criando os Sprites</div>
+          <span class="video-tag">🎨 Devlog</span>
+        </div>
+      </div>
+ 
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/J---aiyznGQ" allowfullscreen loading="lazy" title="Update"></iframe>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Atualização 0.3 — Novos Mapas</div>
+          <span class="video-tag">🔄 Update</span>
+        </div>
+      </div>
+ 
+    </div>
+    <div style="background:var(--paper2); border:2px dashed var(--ink-faint); padding:1.1rem; margin-top:1.8rem; text-align:center; border-radius:2px;">
+      <p style="font-family:'Cutive Mono',monospace; font-size:0.72rem; color:var(--ink-muted); letter-spacing:0.04em;">
+        
+      </p>
+    </div>
+  </div>
+</div>
+ 
+ 
 
-<section class="card">
+<div id="page-jogar" class="page">
+  <div class="section">
+    <h2 class="section-title"><span>Onde Jogar</span></h2>
+    <p style="text-align:center; font-family:'Special Elite',serif; color:var(--ink-muted); margin-bottom:0.8rem;">
+      PaperRun roda direto no navegador — sem download, sem instalação.
+    </p>
+    <div class="play-options">
+ 
+      <div class="play-option-card">
+        <span class="play-option-icon">🌐</span>
+        <div class="play-option-title">Navegador</div>
+        <p class="play-option-desc">Acesse pelo site e jogue na hora. Funciona no Chrome, Firefox e Edge.</p>
+        <a href="#" onclick="showPage('game', getNavLink(4));return false;" class="btn-dark">▶ Jogar</a>
+      </div>
+ 
+      <div class="play-option-card">
+        <span class="play-option-icon">💻</span>
+        <div class="play-option-title">Download PC</div>
+        <p class="play-option-desc">Versão standalone para Windows. Melhor desempenho e modo offline.</p>
+        <a href="#" class="btn-dark">⬇ Baixar</a>
+      </div>
+ 
+      <div class="play-option-card">
+        <span class="play-option-icon">📱</span>
+        <div class="play-option-title">Mobile</div>
+        <p class="play-option-desc">Em breve para Android. Controles adaptados para tela touch.</p>
+        <span class="btn-dark" style="opacity:0.4; cursor:default;">Em Breve</span>
+      </div>
+ 
+    </div>
+ 
+    <div style="background:var(--ink); color:var(--paper); padding:2rem 1.5rem; margin-top:2.5rem; border-radius:2px; text-align:center; box-shadow:5px 5px 0 rgba(0,0,0,0.3);">
+      <p style="font-family:'Caveat',cursive; font-size:1.45rem; font-weight:800; margin-bottom:0.5rem;">✏ Crie sua conta</p>
+      <p style="font-family:'Special Elite',serif; color:var(--ink-faint); margin-bottom:1.2rem; font-size:0.88rem; line-height:1.6;">Salve seu progresso, suba no ranking e acesse conteúdo exclusivo.</p>
+      <a href="#" class="btn-primary" style="background:var(--paper); color:var(--ink);">Cadastrar Grátis</a>
+    </div>
+  </div>
+</div>
+ 
+ 
 
-<h2>🎯 Objetivo do jogo</h2>
+<div id="page-info" class="page">
+  <div class="section">
+    <h2 class="section-title"><span>Sobre o Jogo</span></h2>
+    <div class="info-grid">
+ 
+      <div class="info-card">
+        <h3>📄 O que é PaperRun?</h3>
+        <p>PaperRun é um jogo de plataforma 2D indie onde tudo parece feito à mão — personagens recortados de papel, cenários pintados em caderno e física propositalmente "errada".</p>
+        <p>O objetivo é simples: chegue ao fim de cada fase sem se destruir no caminho.</p>
+      </div>
+ 
+      <div class="info-card">
+        <h3>🎨 Estética</h3>
+        <p>Toda a arte do jogo é inspirada em papelaria artesanal: origami, recorte e colagem. Os sprites têm textura de papel real e sombras desenhadas a lápis.</p>
+        <p>Paleta em preto e branco com nuances de papel envelhecido.</p>
+      </div>
+ 
+      <div class="info-card">
+        <h3>⚙️ Mecânicas</h3>
+        <ul>
+          <li>Corrida por fases com obstáculos</li>
+          <li>Objetos interativos de papel</li>
+          <li>Física baseada em dobras e recortes</li>
+          <li>Editor de mapas integrado</li>
+          <li>Sistema de ranking por tempo</li>
+          <li>Modo cooperativo local</li>
+        </ul>
+      </div>
+ 
+      <div class="info-card">
+        <h3>🗂️ Tipos de Fase</h3>
+        <ul>
+          <li>Corrida clássica — chegue primeiro</li>
+          <li>Sobrevivência — não caia</li>
+          <li>Exploração — ache a saída</li>
+          <li>Construção — monte o caminho</li>
+          <li>Batalha — derrube os outros</li>
+          <li>Desafio — sem errar</li>
+        </ul>
+      </div>
+ 
+      <div class="info-card">
+        <h3>🏅 Progressão</h3>
+        <p>Complete fases para desbloquear novos visuais e títulos. Quanto mais difícil a fase, mais raro o prêmio.</p>
+        <div style="margin-top:0.8rem;">
+          <span class="stamp">Novato</span>
+          <span class="stamp">Dobrador</span>
+          <span class="stamp">Cortador</span>
+          <span class="stamp">Mestre</span>
+          <span class="stamp">Origami</span>
+          <span class="stamp">Lenda</span>
+        </div>
+      </div>
+ 
+      <div class="info-card">
+        <h3>ℹ️ Ficha Técnica</h3>
+        <ul>
+          <li>Gênero: Plataforma 2D</li>
+          <li>Plataformas: Web, PC, Mobile (em breve)</li>
+          <li>Preço: Gratuito</li>
+          <li>Engine: TBD</li>
+          <li>Idioma: Português BR</li>
+          <li>Status: Em desenvolvimento</li>
+          <li>Versão atual: 0.1 Alpha</li>
+        </ul>
+      </div>
+ 
+    </div>
+  </div>
+</div>
+ 
+ 
 
-<p>
-O objetivo do jogo é ajudar o ratinho a pegar o queijo.
-Mas tome cuidado com os obstáculos, eles podem te eliminar!
-Use habilidade e rapidez para vencer.
-</p>
-
-</section>
-
-<img src="ratosaa.jpg" class="imagem-jogo">
-
-</main>
+<div id="page-game" class="page">
+  <div class="section" style="max-width:940px;">
+    <h2 class="section-title"><span>▶ O Jogo</span></h2>
+    <p style="text-align:center; font-family:'Special Elite',serif; color:var(--ink-muted); margin-bottom:1.8rem; font-size:0.9rem;">
+      Jogue direto aqui, sem sair da página.
+    </p>
+ 
+    <div class="game-frame-wrap">
+      <div class="game-frame-bar">
+        <div class="game-frame-dot"></div>
+        <div class="game-frame-dot"></div>
+        <div class="game-frame-dot"></div>
+        <span class="game-frame-title">paperrun.game — janela do jogo</span>
+      </div>
+ 
+      
+ 
+      <div class="game-placeholder">
+        <span class="game-placeholder-icon">✂️</span>
+        <div class="game-placeholder-text">
+          O jogo aparecerá aqui quando publicado.<br/>
+          Descomente o &lt;iframe&gt; no HTML e cole seu link embed.
+        </div>
+      </div>
+ 
+      
+    </div>
+ 
+    <div style="margin-top:1.3rem; display:flex; gap:0.8rem; justify-content:center; flex-wrap:wrap;">
+      <a href="#" class="btn-dark">⛶ Tela Cheia</a>
+      <a href="#" class="btn-outline" style="color:var(--ink); border-color:var(--ink-faint);">🔗 Abrir em nova aba</a>
+    </div>
+ 
+    <div style="background:var(--paper2); border:2px dashed var(--ink-faint); padding:1.1rem; margin-top:1.8rem; border-radius:2px;">
+      <p style="font-family:'Cutive Mono',monospace; font-size:0.7rem; color:var(--ink-muted); text-align:center; letter-spacing:0.04em;">
+        
+      </p>
+    </div>
+  </div>
+</div>
+ 
+ 
 
 <footer>
-
-<p>Desenvolvido por <strong>Mateus Gabriel Pereira Dias</strong></p>
-<p><strong>isso e apenas a base do site, tudo isso vai ser mudado em breve</strong></p>
-
+  <p>✂ PaperRun &mdash; Jogo indie em desenvolvimento &mdash; Feito com papel e código</p>
+  <p style="margin-top:0.4rem; opacity:0.5;">Todos os sprites são autorais</p>
 </footer>
-
+ 
+ 
+<script>
+  
+  function getNavLink(i) { return document.querySelectorAll('.nav-links a')[i]; }
+ 
+  
+  function showPage(id, el) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+ 
+   
+    document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => a.classList.remove('active'));
+    if (el) el.classList.add('active');
+ 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+ 
+  
+  function toggleMenu() {
+    const nav    = document.getElementById('main-nav');
+    const mobile = document.getElementById('nav-mobile');
+    const isOpen = mobile.classList.contains('open');
+ 
+    if (isOpen) {
+      mobile.classList.remove('open');
+      nav.classList.remove('open');
+    } else {
+      mobile.classList.add('open');
+      nav.classList.add('open');
+    }
+  }
+ 
+  function closeMobile() {
+    document.getElementById('nav-mobile').classList.remove('open');
+    document.getElementById('main-nav').classList.remove('open');
+  }
+ 
+ 
+  document.addEventListener('click', function(e) {
+    const nav    = document.getElementById('main-nav');
+    const mobile = document.getElementById('nav-mobile');
+    if (!nav.contains(e.target) && !mobile.contains(e.target)) {
+      closeMobile();
+    }
+  });
+</script>
 </body>
 </html>
+ 
